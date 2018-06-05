@@ -1,0 +1,14 @@
+
+<h3>{{ home.home_description }}</h3>
+<h4>Home price: ${{ home.home_price_start }}-{{ home.home_price_finish }}</h4>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+</br><pre>Comments</pre>
+{% for comment in home.comment_set.all %}
+    <h4>{{comment.comment_text}}</h4>
+{% endfor %}
+<form action="{% url 'query_buyer:vote' home.id %}" method="post">
+{% csrf_token %}
+<input type="text" name="comment" size="40" value="Enter your comments" />
+<input type="submit" value="Enter" />
+</form>

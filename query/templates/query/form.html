@@ -1,0 +1,15 @@
+<h1>Form for seller</h1>
+<form action="{% url 'query:save' %}" method="post">
+{% csrf_token %}
+<h4>Enter home title</h4><input type="text" name="home_title" size="40" placeholder="Big Home" />
+<h4>Enter home brief description</h4><input type="text" name="home_description" size="40" placeholder="Perfect Home" />
+<h4>Enter room number</h4><input type="text" name="home_room" size="40" placeholder="4" />
+<h4>Enter home price</h4><input type="text" name="home_price" size="40" placeholder="1000" />
+<h4>Choose home type</h4><input type="radio" name="home_type" value="Monolite"/>Monolite
+</br><input type="radio" name="home_type" value="Brick"/>Brick
+</br><input type="radio" name="home_type" value="Clay"/>Clay
+</br></br><input type="file" name="home_image" accept="image/*">
+
+<input type="submit" name="enter" value="Enter" />
+<input type="submit" name="add" value="Add another" />
+</form>

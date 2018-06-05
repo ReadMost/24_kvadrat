@@ -1,0 +1,11 @@
+{% if home_list %}
+    <ul>
+    {% for home in home_list %}
+        <li><a href="{% url 'query:detail' home.id %}">{{ home.home_title }}</a></li>
+    {% endfor %}
+        <a href="/query/form/"><button>Sell home</button></a>
+
+    </ul>
+{% else %}
+    <p>No homes are available.</p>
+{% endif %}
